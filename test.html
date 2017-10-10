@@ -1,0 +1,59 @@
+
+<html>
+<head>
+<link 
+<link href="style.css"  rel="stylesheet" type="text/css">
+</head>
+<h1>Battleship game</h1>
+<body text-align='center'>;
+
+<div class="whole">
+<div id="you" class="battlefield you">
+</div>
+<div id="control-board">
+<button id='1000'>carrier</button>
+<button id='1001'>cruiser</button>
+<button id='1002'>submarine</button>
+<button id='1003'>destroyer</button>
+<button id='1004'>corvette</button>
+<button id='rotate'>rotate-ship</button>
+<button id='showships'>showships</button>
+
+
+<textarea id='info' >Welcome! Place your ships on the left..</textarea>
+
+</div>
+<div id="enemy" class="battlefield enemy">
+</div>
+<br/>
+<br/>
+ <textarea id='newcode' >
+ //input your code here
+ //parameters you can use:
+ //Array boardstate(100) from 0 to 99 =
+ // -1 nonHit
+ // 0 missed
+ // 1 hit
+ // boolean isHit: if it hit any ship last round default=false;
+ // integer sunkship: if it hit any ship and it sunk last round =
+ // from 0 to 4 as ship index, if no, sunkship=-1, default=-1
+ // use the function name nextStep()
+ // example below
+ 
+var step=0;
+ 
+function nextStep(){
+	return step++;
+}
+ </textarea>
+	<button id='submit'>submit</button>
+
+</div>
+
+<script src="js1.js"></script>
+
+<div id='code1'>hnaaa</div>
+
+
+</body>
+</html>

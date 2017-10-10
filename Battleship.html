@@ -1,0 +1,153 @@
+
+<html>
+<head>
+<link 
+<link href="style.css"  rel="stylesheet" type="text/css">
+</head>
+<h1>Battleship game</h1>
+<body text-align='center'>;
+
+<div class="whole">
+<div id="you" class="battlefield you">
+</div>
+<div id="control-board">
+<button id='1000'>carrier</button>
+<button id='1001'>cruiser</button>
+<button id='1002'>submarine</button>
+<button id='1003'>destroyer</button>
+<button id='1004'>corvette</button>
+<button id='rotate'>rotate-ship</button>
+<button id='showships'>showships</button>
+
+
+<textarea id='info' >Welcome! Place your ships on the left..</textarea>
+
+</div>
+<div id="enemy" class="battlefield enemy">
+</div>
+<br/>
+<br/>
+ <textarea id='newcode' >
+ //input your code here
+ //parameters you can use:
+ //Array boardstate(100) from 0 to 99 =
+ // -1 nonHit
+ // 0 missed
+ // 1 hit
+ // boolean isHit: if it hit any ship last round default=false;
+ // integer sunkship: if it hit any ship and it sunk last round =
+ // from 0 to 4 as ship index, if no, sunkship=-1, default=-1
+ // use the function name nextStep()
+ // example below
+ 
+//AI function here
+
+var step =3;
+var tstep=0;
+var st='';
+var direct=0;
+NORTH=1;
+SOUTH=-1;
+WEST=2;
+EAST=-2;
+var slength=-1;
+var tpoint=-1;
+function nextStep(){
+	/*for(var i=0;i<10;i++){
+		for(var j=0;j<10;j++){
+			st+=boardstate[i*10+j]+' ';
+		}
+	}*/
+	//alert(st);
+	st='';
+	slength=-1;
+		switch(parseInt(sunkship)){
+            case 0:
+                slength=5;
+                break;
+            case 1:
+                slength =4;
+                break;
+            case 2:
+                slength =3;
+                break;
+            case 3:
+                slength =3;
+                break;
+            case 4:
+                slength =2;
+                break;
+        }
+		if(slength!=-1){
+			 switch (direct){
+			case NORTH:for(var i=0;i<slength;i++)boardstate[tstep+i*10]=2;break;
+			case SOUTH:for(var i=0;i<slength;i++)boardstate[tstep-i*10]=2;break;
+			case WEST:for(var i=0;i<slength;i++)boardstate[tstep+i]=2;break;
+			case EAST:for(var i=0;i<slength;i++)boardstate[tstep-i]=2;break;
+		}
+		
+		tpoint=-1;
+		direct=0;
+		}
+	cl=checkleft();
+    if(cl==-1){
+	do{
+	if(step>99)step-=100;
+	tstep=step;
+	step+=9;}while(boardstate[tstep]>-1);
+	}else{
+		
+		if(direct==0){
+			tpoint=cl;
+			tstep=tpoint;
+			direct=turn();
+			
+		}else if(!foward()||!isHit){
+			direct=direct*-1;
+			tstep=tpoint;
+			if(!foward())direct=turn();
+		}
+		
+	}
+			
+	return tstep;
+	
+	function checkleft(){
+		for(var i=0;i<boardstate.length;i++){
+		if(boardstate[i]==1)return i;
+	}
+	return -1;
+	}
+	function turn(){
+		if(isLegal(tpoint-10)){tstep=tpoint-10;return NORTH;}
+		if(isLegal(tpoint+10)){tstep=tpoint+10;return SOUTH;}
+		if(isLegal(tpoint-1)){tstep=tpoint-1;return WEST;}
+		if(isLegal(tpoint+1)){tstep=tpoint+1;return EAST;}
+	}
+	function foward(){
+		if(direct==NORTH&&isLegal(tstep-10)){tstep=tstep-10;return true;}
+		if(direct==SOUTH&&isLegal(tstep+10)){tstep=tstep+10;return true;}
+		if(direct==WEST&&isLegal(tstep-1)){tstep=tstep-1;return true;}
+		if(direct==EAST&&isLegal(tstep+1)){tstep=tstep+1;return true;}
+		return false;
+	}
+	function isLegal(c){
+		if(c>=0&&c<=99&&(c%10==tstep%10||Math.floor(c/10)==Math.floor(tstep/10))){
+		if(boardstate[c]==-1)return true;}
+		else return false;
+	}
+}
+
+//end AI function 
+ </textarea>
+	<button id='submit'>submit</button>
+
+</div>
+
+<script src="js1.js"></script>
+
+<div id='code1'>hnaaa</div>
+
+
+</body>
+</html>

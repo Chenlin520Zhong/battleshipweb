@@ -1,0 +1,116 @@
+
+h1{
+color:#0080FF; 
+text-align:center;
+}
+h1:hover{
+	color:black;
+	
+}
+.whole{
+	width:1050px;
+margin-left: auto;
+margin-right: auto;
+	
+}
+.battlefield{
+	
+	width:420px;
+	height:420px;
+	background-color:white;
+	float:left;
+	
+	
+}
+#control-board{
+	text-align:center;
+	height:420px;
+	width:210px;
+	background-color:black;
+	float:left;
+}
+#control-board button{
+	float:left;
+	width:105px;
+	font-family:Impact;
+	
+}
+button.#rotate{
+	
+}
+.grid{
+	
+	
+	text-align:center;
+    font-family:Arial;
+	line-height:40px;
+	width:40px;
+	height:40px;
+	background-color:#0080FF;
+	float:left;
+	margin:1px;
+	color:white;
+	-moz-user-select:none; /*火狐*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    -ms-user-select:none; /*IE10*/
+    -khtml-user-select:none; /*早期浏览器*/
+    user-select:none;
+	cursor:pointer;
+	
+}
+.grid-placed{
+	width:40px;
+	height:40px;
+	background-color:black;
+	float:left;
+	margin:1px;
+	color:white;
+	-moz-user-select:none; /*火狐*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    -ms-user-select:none; /*IE10*/
+    -khtml-user-select:none; /*早期浏览器*/
+    user-select:none;
+	cursor:pointer;
+	
+}
+
+
+#info{
+	font-family:Arial;
+margin-left: auto;
+margin-right: auto;
+	width:210px;
+	height:325px;
+	color:white;
+background-color:black;
+border-style:none; 
+	
+}
+
+
+.grid:hover{
+	background-color:#0080FF;
+		
+}
+
+
+#newcode {
+	width:1000px;
+	height:600px;
+	background-color:black;
+	color: white;
+}
+
+#enemy .grid:hover{
+	background-color:#0080FF;
+		
+}
+
+#submit{
+		font-family:Impact;
+	
+}
+
+html{
+	background-color: black;
+}
